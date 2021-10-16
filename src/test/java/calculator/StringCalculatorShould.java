@@ -7,9 +7,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class StringCalculatorShould {
 
     @Test
-    void empty_string_should_return_0() {
+    public void empty_string_should_return_0() {
         StringCalculator stringCalculator = new StringCalculator();
-        assertEquals(0, stringCalculator.add(""));
+        int result = stringCalculator.add("");
+        assertEquals(0, result);
     }
 
     /*
