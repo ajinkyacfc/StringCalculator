@@ -3,7 +3,9 @@ package calculator;
 public class StringCalculator {
 
     public int add(String numbers) {
-        return 0;
+        if ("".equalsIgnoreCase(numbers))
+            return 0;
+        return Integer.valueOf(numbers);
     }
 
 }
