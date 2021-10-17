@@ -13,9 +13,9 @@ public class StringCalculator {
             return Integer.parseInt(numbers);
         }
 
-        String[] twonums = numbers.split("\\,");
+        String[] output = numbers.split("\\,");
 
-        return Integer.parseInt(twonums[0]) + Integer.parseInt(twonums[1]);
+        return Integer.parseInt(output[0]) + Integer.parseInt(output[1]);
     }
 
 }
