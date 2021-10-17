@@ -14,7 +14,7 @@ public class StringCalculator {
         }
 
        */
-        String[] output = numbers.split(",");
+        String[] output = numbers.split(",|\n");
 
         int result = 0;
         for (String numb:output) {

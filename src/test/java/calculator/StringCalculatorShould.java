@@ -33,4 +33,11 @@ class StringCalculatorShould {
         int result = stringCalculator.add("1,2,3");
         assertEquals(6,result);
     }
+
+    @Test
+    void addThreeNumbersCommaAndNewLine() {
+        StringCalculator stringCalculator = new StringCalculator();
+        int result = stringCalculator.add("1\n2,3");
+        assertEquals(6,result);
+    }
 }
