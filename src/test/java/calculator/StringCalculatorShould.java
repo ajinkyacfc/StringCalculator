@@ -1,5 +1,6 @@
 package calculator;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -39,5 +40,13 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         int result = stringCalculator.add("1\n2,3");
         assertEquals(6,result);
+    }
+
+    @Test
+    void shouldThrowExceptionWhenNegativeNumberProvided() {
+        StringCalculator stringCalculator = new StringCalculator();
+        Assertions.assertThrows(NegativeNumberException.class, () ->{
+            stringCalculator.add("-1");
+        });
     }
 }

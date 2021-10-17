@@ -18,9 +18,18 @@ public class StringCalculator {
 
         int result = 0;
         for (String numb:output) {
+            if (Integer.parseInt(numb) < 0)
+                throw new NegativeNumberException();
             result+=Integer.parseInt(numb);
         }
         return result;
+    }
+
+    private String getDelimetersPattern(String numbers){
+        if (numbers.startsWith("//")){
+            return String.valueOf(numbers.charAt(2));
+        }
+        return ",";
     }
 
 }
