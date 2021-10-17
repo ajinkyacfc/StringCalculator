@@ -1,5 +1,6 @@
 package calculator;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class StringCalculator {
@@ -17,19 +18,22 @@ public class StringCalculator {
         String[] output = numbers.split(",|\n");
 
         int result = 0;
+        List<String> negatives = new ArrayList<>();
         for (String numb:output) {
             if (Integer.parseInt(numb) < 0)
-                throw new NegativeNumberException();
+                negatives.add(numb);
             result+=Integer.parseInt(numb);
         }
-        return result;
+        if (negatives.isEmpty())
+            return result;
+        String message = "Negatives: ";
+        for (String negative: negatives) {
+            message += negative + " ";
+        }
+        throw new NegativeNumberException(message.trim());
     }
 
-    private String getDelimetersPattern(String numbers){
-        if (numbers.startsWith("//")){
-            return String.valueOf(numbers.charAt(2));
-        }
-        return ",";
-    }
+
+
 
 }

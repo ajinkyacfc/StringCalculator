@@ -49,4 +49,13 @@ class StringCalculatorShould {
             stringCalculator.add("-1");
         });
     }
+
+    @Test
+    void shouldIncludeAllNegativeNumbersInException(){
+        StringCalculator stringCalculator = new StringCalculator();
+        NegativeNumberException exception = Assertions.assertThrows(NegativeNumberException.class, () ->{
+            stringCalculator.add("-1,-2");
+        });
+        assertEquals("Negatives: -1 -2",exception.getMessage());
+    }
 }
