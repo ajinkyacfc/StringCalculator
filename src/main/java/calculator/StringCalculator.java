@@ -12,10 +12,13 @@ public class StringCalculator {
         if (numbers.matches("[0-9]")){
             return Integer.parseInt(numbers);
         }
-
         String[] output = numbers.split("\\,");
 
-        return Integer.parseInt(output[0]) + Integer.parseInt(output[1]);
+        int result = 0;
+        for (String numb:output) {
+            result+=Integer.parseInt(numb);
+        }
+        return result;
     }
 
 }
