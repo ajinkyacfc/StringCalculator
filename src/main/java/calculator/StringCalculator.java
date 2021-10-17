@@ -9,10 +9,12 @@ public class StringCalculator {
             return 0;
         }
 
-        if (numbers.matches("[0-9]")){
+      /*  if (numbers.matches("[0-9]")){
             return Integer.parseInt(numbers);
         }
-        String[] output = numbers.split("\\,");
+
+       */
+        String[] output = numbers.split(",");
 
         int result = 0;
         for (String numb:output) {
